@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalScript="*res://GlobalScript.gd"
+LoveBar="*res://LoveBar.tscn"
 
 [display]
 

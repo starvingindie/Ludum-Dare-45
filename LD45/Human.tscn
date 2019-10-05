@@ -206,11 +206,12 @@ extents = Vector2( 6.61291, 7.82031 )
 
 [node name="Human" type="KinematicBody2D"]
 script = ExtResource( 1 )
+walking_speed = 40
 
 [node name="HumanSprites" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 48
+frame = 10
 playing = true
 script = ExtResource( 182 )
 __meta__ = {
@@ -218,8 +219,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="HumanSprites"]
-wait_time = 10.0
-one_shot = true
+wait_time = 5.0
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

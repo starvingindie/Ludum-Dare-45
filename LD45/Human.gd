@@ -1,6 +1,6 @@
 extends KinematicBody2D
 var is_human = true
-var walking_speed = 20
+export var walking_speed = 20
 var velocity = Vector2(walking_speed,walking_speed)
 var heart = load("res://Heart.tscn")
 # Declare member variables here. Examples:
@@ -29,6 +29,9 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.get_filename() == "res://Human.tscn" and collision.collider != null:
 			
+			if not GlobalScript.first_bump:
+				GlobalScript.first_bump = true
+				
 			call_shake_camera()
 			
 			collision.collider.get_node("HumanSprites").animation = "hit"

@@ -1,5 +1,6 @@
 extends Node
 var needs_camera_shake = false
+var first_bump = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

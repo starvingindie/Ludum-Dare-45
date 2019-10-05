@@ -11,13 +11,18 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if GlobalScript.first_bump:
+		LoveBar.visible = true
+	pass
+	
 func _input(event):
 	if event.is_action_pressed("left_click"):
-		spawn_something(human)
+		if get_node("CooldownBar/TextureProgress").spawn_ready:
+			get_node("CooldownBar/TextureProgress").spawn_ready = false
+			spawn_something(human)
 		#spawn_something(heart)
-		spawn_something(click_particles)
+			spawn_something(click_particles)
 		pass
 
 func spawn_something(something):
