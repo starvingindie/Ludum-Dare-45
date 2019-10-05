@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://MainGame.gd" type="Script" id=1]
+[ext_resource path="res://Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://Human.tscn" type="PackedScene" id=3]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 320, 180 )
+current = true
+script = ExtResource( 2 )
+
+[node name="Human" parent="." instance=ExtResource( 3 )]
+position = Vector2( 260, 140 )
+
+[node name="LowerBounds" type="StaticBody2D" parent="."]
+editor/display_folded = true
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LowerBounds"]
+polygon = PoolVector2Array( 0, 360, 0, 380, 640, 380, 640, 360 )
+
+[node name="UpperBounds" type="StaticBody2D" parent="."]
+editor/display_folded = true
+visible = false
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UpperBounds"]
+polygon = PoolVector2Array( 0, 360, -30, 360, -30, -20, 660, -20, 660, 360, 640, 360, 640, 0, 0, 0 )
