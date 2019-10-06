@@ -16,6 +16,9 @@ func _process(delta):
 		LoveBar.visible = true
 	pass
 	
+	if GlobalScript.game_is_over:
+		get_tree().change_scene("res://EndScene.tscn")
+	
 func _input(event):
 	if event.is_action_pressed("left_click"):
 		if get_node("CooldownBar/TextureProgress").spawn_ready:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=185 format=2]
+[gd_scene load_steps=186 format=2]
 
 [ext_resource path="res://Human.gd" type="Script" id=1]
 [ext_resource path="res://sprites/human anim/render.png_0.png" type="Texture" id=2]
@@ -182,6 +182,7 @@
 [ext_resource path="res://sprites/human anim dead/render.png_58.png" type="Texture" id=180]
 [ext_resource path="res://sprites/human anim dead/render.png_59.png" type="Texture" id=181]
 [ext_resource path="res://HumanSprites.gd" type="Script" id=182]
+[ext_resource path="res://Timer.gd" type="Script" id=183]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -202,7 +203,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 6.61291, 7.82031 )
+extents = Vector2( 8.19753, 9.40208 )
 
 [node name="Human" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -211,7 +212,7 @@ walking_speed = 40
 [node name="HumanSprites" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
-frame = 10
+frame = 29
 playing = true
 script = ExtResource( 182 )
 __meta__ = {
@@ -221,6 +222,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="HumanSprites"]
 wait_time = 5.0
 autostart = true
+script = ExtResource( 183 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.26256, 0.104675 )

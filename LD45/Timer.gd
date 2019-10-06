@@ -1,21 +1,14 @@
-extends AnimatedSprite
-var speed = 75
+extends Timer
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	LoveBar.get_node("TextureProgress").value += 1
-	playing = true
+	wait_time = GlobalScript.human_life_time
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	position.y -= speed * delta
+#func _process(delta):
 #	pass
-
-
-func _on_Timer_timeout():
-	queue_free()
-	pass # Replace with function body.

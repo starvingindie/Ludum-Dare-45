@@ -14,6 +14,9 @@ func _ready():
 		velocity.x *= -1
 	if (randi() % 2) > 0:
 		velocity.y *= -1
+	if velocity.x == 0 and velocity.y == 0:
+		velocity.x = 1 * walking_speed
+		velocity.y = 1 * walking_speed
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
