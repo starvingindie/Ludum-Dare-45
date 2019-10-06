@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	if not playing_hearts and credits == false:
 		credits = true
-		get_node("RichTextLabel").text = "FROM NOTHING, LOVE WAS CREATED"
+		get_node("RichTextLabel").text = "FROM NOTHING, FATE CREATED LOVE"
 		get_node("TextTimer").start(5)
 		
 	if credits:

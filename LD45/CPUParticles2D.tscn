@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 100
+lifetime = 11.37
+emission_shape = 2
+emission_rect_extents = Vector2( 640, 1 )
+spread = 89.52
+gravity = Vector2( 0, 10 )
+angle = 720.0
+scale_amount = 1.5
+color = Color( 0.976471, 0.658824, 0.458824, 1 )
