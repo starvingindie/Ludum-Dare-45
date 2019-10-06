@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MainGame.gd" type="Script" id=1]
 [ext_resource path="res://GameText.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://CooldownBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Music SFX/click_sound.wav" type="AudioStream" id=5]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 1 )
@@ -40,3 +41,7 @@ polygon = PoolVector2Array( 0, 360, -30, 360, -30, -20, 660, -20, 660, 360, 640,
 [node name="CooldownBar" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 180 )
 cooldown_time = 7.0
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0

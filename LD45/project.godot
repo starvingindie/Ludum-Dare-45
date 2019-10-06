@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 GlobalScript="*res://GlobalScript.gd"
 LoveBar="*res://LoveBar.tscn"
+Music="*res://Music.tscn"
 
 [display]
 

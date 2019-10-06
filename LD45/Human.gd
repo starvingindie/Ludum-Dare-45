@@ -31,7 +31,7 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if collision.collider.get_filename() == "res://Human.tscn" and collision.collider != null:
-			
+			get_node("CollideSound").playing = true
 			if not GlobalScript.first_bump:
 				GlobalScript.first_bump = true
 				

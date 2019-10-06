@@ -17,7 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
-	if timer >= 0.5 and text != "FATE WANTED THE CREATIONS TO BUMP INTO EACH OTHER":
+	if timer >= 0.5 and text != "FATE NEEDED THEM TO BUMP INTO EACH OTHER":
 		timer = 0.0
 		if modulate.a > 0:
 			modulate.a -= 0.035
@@ -26,7 +26,7 @@ func _process(delta):
 		modulate.a = mod_value
 		is_ready = false
 		current_text += 1
-		text = "WHEN THE CREATIONS CONNECTED, SOMETHING SPECIAL HAPPENED..."
+		text = "WHEN THEY CONNECTED, SOMETHING SPECIAL HAPPENED..."
 		get_node("Timer").start(1)
 	pass
 
@@ -37,7 +37,7 @@ func _input(event):
 			is_ready = false
 			get_node("Timer").start(6)
 			current_text += 1
-			text = "...AND THEN FATE CREATED SOMETHING BEAUTIFUL"
+			text = "...BUT THEN FATE CREATED SOMETHING BEAUTIFUL"
 			cooldown_bar.cooldown_time = 1
 			
 		if current_text == 2 and is_ready:
@@ -68,7 +68,7 @@ func _input(event):
 			modulate.a = mod_value
 			is_ready = false
 			current_text += 1
-			text = "FATE WANTED THE CREATIONS TO BUMP INTO EACH OTHER"
+			text = "FATE NEEDED THEM TO BUMP INTO EACH OTHER"
 			get_node("Timer").start(1)
 			
 
@@ -80,6 +80,6 @@ func _on_Timer_timeout():
 		is_ready = false
 		get_node("Timer").start(0.5)
 		current_text += 1
-		text = "BUT NOTHING LASTS FOREVER."
+		text = "HOWEVER, NOTHING LASTS FOREVER."
 		GlobalScript.human_life_time = 10
 	pass # Replace with function body.

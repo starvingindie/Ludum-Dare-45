@@ -22,6 +22,7 @@ func _process(delta):
 func _input(event):
 	if event.is_action_pressed("left_click"):
 		if get_node("CooldownBar/TextureProgress").spawn_ready:
+			get_node("ClickSound").playing = true
 			get_node("CooldownBar/TextureProgress").spawn_ready = false
 			spawn_something(human)
 		#spawn_something(heart)

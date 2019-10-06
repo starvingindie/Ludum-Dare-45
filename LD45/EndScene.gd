@@ -1,6 +1,7 @@
 extends Node2D
 var heart = load("res://Heart.tscn")
 var playing_hearts = true
+var credits = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -11,10 +12,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not playing_hearts:
-		get_node("RichTextLabel").text = "THAT'S WHEN LOVE WAS CREATED"
+	if not playing_hearts and credits == false:
+		credits = true
+		get_node("RichTextLabel").text = "FROM NOTHING, LOVE WAS CREATED"
+		get_node("TextTimer").start(5)
+		
+	if credits:
+		pass
 #	pass
-
 
 func _on_Timer_timeout():
 	if playing_hearts:
@@ -27,5 +32,7 @@ func _on_Timer_timeout():
 
 
 func _on_TextTimer_timeout():
+	if playing_hearts == false and credits:
+		get_node("RichTextLabel").text = "THANK YOU FOR PLAYING - @GABRIELCORNISH"
 	playing_hearts = false
 	pass # Replace with function body.
